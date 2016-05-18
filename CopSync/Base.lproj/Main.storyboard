@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fwv-Bu-pKc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="3s0-cj-X6W">
+            <objects>
+                <viewController id="Fwv-Bu-pKc" customClass="ViewController" customModule="CopSync" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sz3-sA-RKO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ly9-uX-xcn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Iu-6o-Slu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wS6-OC-xmD">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvi-1s-iav">
+                                        <rect key="frame" x="30" y="10" width="42" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Image"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77Z-8y-xvu">
+                                        <rect key="frame" x="536" y="10" width="40" height="30"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Audio"/>
+                                        <connections>
+                                            <action selector="sendMessageButton:" destination="Fwv-Bu-pKc" eventType="touchUpInside" id="s8c-XD-m6Q"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yK3-fJ-exM">
+                                        <rect key="frame" x="102" y="10" width="404" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BaR-L2-SC9">
+                                        <rect key="frame" x="505" y="10" width="25" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="yK3-fJ-exM" firstAttribute="leading" secondItem="Hvi-1s-iav" secondAttribute="trailing" constant="30" id="7gl-xf-STd"/>
+                                    <constraint firstItem="BaR-L2-SC9" firstAttribute="centerY" secondItem="wS6-OC-xmD" secondAttribute="centerY" id="LCp-E7-82N"/>
+                                    <constraint firstItem="77Z-8y-xvu" firstAttribute="leading" secondItem="BaR-L2-SC9" secondAttribute="trailing" constant="30" id="Viy-Xh-Drb"/>
+                                    <constraint firstItem="yK3-fJ-exM" firstAttribute="centerY" secondItem="wS6-OC-xmD" secondAttribute="centerY" id="ZPx-0n-d95"/>
+                                    <constraint firstItem="Hvi-1s-iav" firstAttribute="centerY" secondItem="wS6-OC-xmD" secondAttribute="centerY" id="aAJ-MF-hiJ"/>
+                                    <constraint firstItem="77Z-8y-xvu" firstAttribute="centerY" secondItem="wS6-OC-xmD" secondAttribute="centerY" id="hoO-4U-ihY"/>
+                                    <constraint firstAttribute="height" constant="50" id="jFi-zp-nXX"/>
+                                    <constraint firstAttribute="trailing" secondItem="77Z-8y-xvu" secondAttribute="trailing" constant="24" id="mJq-dC-hnQ"/>
+                                    <constraint firstItem="77Z-8y-xvu" firstAttribute="leading" secondItem="yK3-fJ-exM" secondAttribute="trailing" constant="30" id="rM1-mV-Xvx"/>
+                                    <constraint firstItem="Hvi-1s-iav" firstAttribute="leading" secondItem="wS6-OC-xmD" secondAttribute="leading" constant="30" id="xZf-K2-eXp"/>
+                                    <constraint firstItem="BaR-L2-SC9" firstAttribute="leading" secondItem="Hvi-1s-iav" secondAttribute="trailing" constant="30" id="xmd-ik-YX9"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="BaR-L2-SC9"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmu-w7-o4f">
+                                <rect key="frame" x="0.0" y="20" width="600" height="530"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gmu-w7-o4f" secondAttribute="trailing" id="cmb-ol-RV7"/>
+                            <constraint firstAttribute="trailing" secondItem="wS6-OC-xmD" secondAttribute="trailing" id="ifd-od-zuB"/>
+                            <constraint firstItem="wS6-OC-xmD" firstAttribute="top" secondItem="gmu-w7-o4f" secondAttribute="bottom" id="jD1-rr-C7i"/>
+                            <constraint firstItem="Ly9-uX-xcn" firstAttribute="top" secondItem="wS6-OC-xmD" secondAttribute="bottom" id="kSf-Gn-Z9C"/>
+                            <constraint firstItem="gmu-w7-o4f" firstAttribute="leading" secondItem="9Iu-6o-Slu" secondAttribute="leading" id="nbe-nf-UYj"/>
+                            <constraint firstItem="wS6-OC-xmD" firstAttribute="leading" secondItem="9Iu-6o-Slu" secondAttribute="leading" id="qe8-kA-GxG"/>
+                            <constraint firstItem="gmu-w7-o4f" firstAttribute="top" secondItem="sz3-sA-RKO" secondAttribute="bottom" id="syq-cd-T6r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="audioMessageButton" destination="77Z-8y-xvu" id="BWS-iM-1iP"/>
+                        <outlet property="bottomConstraint" destination="kSf-Gn-Z9C" id="N2M-TR-Zyq"/>
+                        <outlet property="mainScrollView" destination="gmu-w7-o4f" id="TTM-bu-TlS"/>
+                        <outlet property="messageTextField" destination="yK3-fJ-exM" id="gse-rk-xfv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgR-xv-PDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="55"/>
+        </scene>
+    </scenes>
+</document>
