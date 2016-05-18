@@ -6,7 +6,7 @@ enum DataSourceType: Int {
     case Others
 }
 
-public class ChatBubbleData {
+class ChatBubbleData {
     
     var text: String?
     var image: UIImage?

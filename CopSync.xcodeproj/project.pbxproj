@@ -59,6 +59,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BB77A8961CEC2CA100CBFF5A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		BBB0F38C1CE9B4C10081D932 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +95,7 @@
 		BBD2C0781CE9814B00CD246C /* CopSync */ = {
 			isa = PBXGroup;
 			children = (
+				BB77A8961CEC2CA100CBFF5A /* Utility */,
 				BBB0F38C1CE9B4C10081D932 /* Model */,
 				BBD2C08E1CE9819100CD246C /* Assets */,
 				BBD2C08D1CE9817400CD246C /* SupportingFiles */,

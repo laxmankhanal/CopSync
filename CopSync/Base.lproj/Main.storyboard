@@ -24,13 +24,16 @@
                                         <rect key="frame" x="30" y="10" width="42" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Image"/>
+                                        <connections>
+                                            <action selector="takeImageButtonAction:" destination="Fwv-Bu-pKc" eventType="touchUpInside" id="glU-Wu-OWQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77Z-8y-xvu">
                                         <rect key="frame" x="536" y="10" width="40" height="30"/>
                                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Audio"/>
                                         <connections>
-                                            <action selector="sendMessageButton:" destination="Fwv-Bu-pKc" eventType="touchUpInside" id="s8c-XD-m6Q"/>
+                                            <action selector="sendButtonAction:" destination="Fwv-Bu-pKc" eventType="touchUpInside" id="pC1-dq-W0D"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yK3-fJ-exM">
