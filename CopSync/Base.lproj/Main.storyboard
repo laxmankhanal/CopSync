@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fwv-Bu-pKc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fwv-Bu-pKc">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
@@ -14,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Ly9-uX-xcn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Iu-6o-Slu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wS6-OC-xmD">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvi-1s-iav">
                                         <rect key="frame" x="30" y="10" width="42" height="30"/>
@@ -29,7 +28,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77Z-8y-xvu">
-                                        <rect key="frame" x="536" y="10" width="40" height="30"/>
+                                        <rect key="frame" x="256" y="10" width="40" height="30"/>
                                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Audio"/>
                                         <connections>
@@ -37,9 +36,12 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yK3-fJ-exM">
-                                        <rect key="frame" x="102" y="10" width="404" height="30"/>
+                                        <rect key="frame" x="102" y="10" width="124" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Fwv-Bu-pKc" id="1BF-Ix-MWG"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BaR-L2-SC9">
                                         <rect key="frame" x="505" y="10" width="25" height="30"/>
@@ -47,7 +49,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="yK3-fJ-exM" firstAttribute="leading" secondItem="Hvi-1s-iav" secondAttribute="trailing" constant="30" id="7gl-xf-STd"/>
                                     <constraint firstItem="BaR-L2-SC9" firstAttribute="centerY" secondItem="wS6-OC-xmD" secondAttribute="centerY" id="LCp-E7-82N"/>
@@ -68,8 +70,24 @@
                                 </variation>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmu-w7-o4f">
-                                <rect key="frame" x="0.0" y="20" width="600" height="530"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="410"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmC-7E-cyb" userLabel="DummyView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="azt-mZ-KY0"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="OmC-7E-cyb" firstAttribute="leading" secondItem="gmu-w7-o4f" secondAttribute="leading" id="Ca4-nF-U4I"/>
+                                    <constraint firstAttribute="bottom" secondItem="OmC-7E-cyb" secondAttribute="bottom" constant="401" id="Xzq-Vx-Al5"/>
+                                    <constraint firstAttribute="trailing" secondItem="OmC-7E-cyb" secondAttribute="trailing" id="epI-Vt-KDd"/>
+                                    <constraint firstItem="OmC-7E-cyb" firstAttribute="width" secondItem="gmu-w7-o4f" secondAttribute="width" id="gwW-5C-cXg"/>
+                                    <constraint firstItem="OmC-7E-cyb" firstAttribute="top" secondItem="gmu-w7-o4f" secondAttribute="top" id="pli-BL-WQB"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,9 +101,11 @@
                             <constraint firstItem="gmu-w7-o4f" firstAttribute="top" secondItem="sz3-sA-RKO" secondAttribute="bottom" id="syq-cd-T6r"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="audioMessageButton" destination="77Z-8y-xvu" id="BWS-iM-1iP"/>
                         <outlet property="bottomConstraint" destination="kSf-Gn-Z9C" id="N2M-TR-Zyq"/>
+                        <outlet property="dummyBottomConstraint" destination="Xzq-Vx-Al5" id="qgr-wD-Yo1"/>
                         <outlet property="mainScrollView" destination="gmu-w7-o4f" id="TTM-bu-TlS"/>
                         <outlet property="messageTextField" destination="yK3-fJ-exM" id="gse-rk-xfv"/>
                     </connections>

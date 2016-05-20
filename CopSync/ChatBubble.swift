@@ -7,19 +7,16 @@ class ChatBubble: UIView {
     var text: String?
     var chatTextLabel: UILabel?
     
-    init(data: ChatBubbleData, startY: CGFloat){
-        
+    init(data: ChatBubbleData, startY: CGFloat) {
         // 1. Initializing parent view with calculated frame
         super.init(frame: ChatBubble.framePrimary(data.sourceType, startY:startY))
         
-        // Making Background color as gray color
-//        self.backgroundColor = UIColor.lightGrayColor()
+        super.backgroundColor = UIColor.redColor()
         
         let padding: CGFloat = 10.0
         
         // 2. Drawing image if any
         if let chatImage = data.image {
-            
             let width: CGFloat = min(chatImage.size.width, self.frame.width - 2 * padding)
             let height: CGFloat = width * 0.5625 //maintaining the aspect ratio of an image
             chatImageView = UIImageView(frame: CGRectMake(padding, padding, width, height))
@@ -29,15 +26,12 @@ class ChatBubble: UIView {
             self.addSubview(chatImageView!)
         }
         
-        if let chatText = data.text {
+        if data.text != nil {
             // frame calculation
             let startX = padding
-            var startY:CGFloat = 5.0
-            if let imageView = chatImageView {
-                startY += self.chatImageView!.frame.maxY
-            }
+            let startY:CGFloat = 5.0
             chatTextLabel = UILabel(frame: CGRectMake(startX, startY, self.frame.width - 2 * startX , 5))
-            chatTextLabel?.textAlignment = data.sourceType == .Mine ? .Right : .Left
+            chatTextLabel?.textAlignment = data.sourceType == .Sender ? .Right : .Left
             chatTextLabel?.font = UIFont.systemFontOfSize(14)
             chatTextLabel?.numberOfLines = 0 // Making it multiline
             chatTextLabel?.text = data.text
@@ -47,7 +41,7 @@ class ChatBubble: UIView {
         // 4. Calculation of new width and height of the chat bubble view
         var bubbleViewHeight: CGFloat = 0.0
         var bubbleViewWidth: CGFloat = 0.0
-        if let imageView = chatImageView {
+        if chatImageView != nil {
             // Height calculation of the parent view depending upon the image view and text label
             bubbleViewWidth = max(self.chatImageView!.frame.maxX, self.chatTextLabel!.frame.maxX) + padding
             bubbleViewHeight = max(self.chatImageView!.frame.maxY, self.chatTextLabel!.frame.maxY) + padding
@@ -62,16 +56,16 @@ class ChatBubble: UIView {
         self.frame = CGRectMake(self.frame.minX, self.frame.minY, bubbleViewWidth, bubbleViewHeight)
         
         // 6. Adding the resizable image view to give it bubble like shape
-        let bubbleImageFileName = data.sourceType == .Mine ? "bubbleMine" : "bubbleSomeone"
+        let bubbleImageFileName = data.sourceType == .Sender ? "bubbleMine" : "bubbleSomeone"
         bgImageView = UIImageView(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)))
-        if data.sourceType == .Mine {
+        if data.sourceType == .Sender {
             bgImageView?.image = UIImage(named: bubbleImageFileName)?.resizableImageWithCapInsets(UIEdgeInsetsMake(14, 14, 17, 28))
         } else {
             bgImageView?.image = UIImage(named: bubbleImageFileName)?.resizableImageWithCapInsets(UIEdgeInsetsMake(14, 22, 17, 28))
         }
         
        //  Frame recalculation for filling up the bubble with background bubble image
-        let repsotionXFactor:CGFloat = data.sourceType == .Mine ? -1.0 : -8.0
+        let repsotionXFactor:CGFloat = data.sourceType == .Sender ? -1.0 : -8.0
         let bgImageNewX = CGRectGetMinX(bgImageView!.frame) + repsotionXFactor
         let bgImageNewWidth =  CGRectGetWidth(bgImageView!.frame) + CGFloat(12.0)
         let bgImageNewHeight =  CGRectGetHeight(bgImageView!.frame) + CGFloat(6.0)
@@ -88,14 +82,13 @@ class ChatBubble: UIView {
     }
 
     //MARK: - FRAME CALCULATION
-    class func framePrimary(type:DataSourceType, startY: CGFloat) -> CGRect{
+    static func framePrimary(type:DataSourceType, startY: CGFloat) -> CGRect{
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let paddingFactor: CGFloat = 0.02
         let sidePadding = screenSize.width * paddingFactor
         let maxWidth = screenSize.width * 0.65 // We are cosidering 65% of the screen width as the Maximum with of a single bubble
-        let startX: CGFloat = type == .Mine ? screenSize.width * (CGFloat(1.0) - paddingFactor) - maxWidth : sidePadding
-        return CGRectMake(startX, startY, maxWidth, 5) // 5 is the primary height before drawing starts
+        let startX: CGFloat = type == .Sender ? screenSize.width * (CGFloat(1.0) - paddingFactor) - maxWidth : sidePadding
+        return CGRectMake(startX, startY, maxWidth, 15) // 15 is the primary height before drawing starts
     }
-    
     
 }
