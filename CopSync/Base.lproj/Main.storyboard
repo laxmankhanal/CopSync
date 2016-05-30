@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="3s0-cj-X6W">
             <objects>
-                <viewController id="Fwv-Bu-pKc" customClass="ViewController" customModule="CopSync" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatViewController" id="Fwv-Bu-pKc" customClass="ViewController" customModule="CopSync" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sz3-sA-RKO"/>
                         <viewControllerLayoutGuide type="bottom" id="Ly9-uX-xcn"/>
@@ -69,7 +69,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmu-w7-o4f">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmu-w7-o4f">
                                 <rect key="frame" x="0.0" y="20" width="320" height="410"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmC-7E-cyb" userLabel="DummyView">
@@ -81,6 +81,7 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="OmC-7E-cyb" firstAttribute="leading" secondItem="gmu-w7-o4f" secondAttribute="leading" id="Ca4-nF-U4I"/>
                                     <constraint firstAttribute="bottom" secondItem="OmC-7E-cyb" secondAttribute="bottom" constant="401" id="Xzq-Vx-Al5"/>
@@ -88,6 +89,9 @@
                                     <constraint firstItem="OmC-7E-cyb" firstAttribute="width" secondItem="gmu-w7-o4f" secondAttribute="width" id="gwW-5C-cXg"/>
                                     <constraint firstItem="OmC-7E-cyb" firstAttribute="top" secondItem="gmu-w7-o4f" secondAttribute="top" id="pli-BL-WQB"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cmm-91-PAX" appends="YES" id="boS-sy-qWd"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,6 +115,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgR-xv-PDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cmm-91-PAX">
+                    <connections>
+                        <action selector="tapOutsideKeyboard:" destination="Fwv-Bu-pKc" id="jct-ro-uKr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-65" y="55"/>
         </scene>

@@ -7,25 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB4C9B771CFC04EB0047D28E /* ChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B761CFC04EB0047D28E /* ChatDataModel.swift */; };
+		BB4C9B791CFC05100047D28E /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B781CFC05100047D28E /* ChatBubbleView.swift */; };
+		BB4C9B7B1CFC051A0047D28E /* UILabelCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B7A1CFC051A0047D28E /* UILabelCustomization.swift */; };
+		BB4C9B7F1CFC05320047D28E /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B7C1CFC05320047D28E /* AudioPlayerViewController.swift */; };
+		BB4C9B801CFC05320047D28E /* MediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B7D1CFC05320047D28E /* MediaController.swift */; };
+		BB4C9B811CFC05320047D28E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B7E1CFC05320047D28E /* ViewController.swift */; };
+		BB4C9B831CFC05450047D28E /* PassCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B821CFC05450047D28E /* PassCodeVC.swift */; };
+		BB4C9B861CFC05590047D28E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B841CFC05590047D28E /* AppDelegate.swift */; };
+		BB4C9B871CFC05590047D28E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB4C9B851CFC05590047D28E /* Info.plist */; };
 		BBB0F38B1CE9AE240081D932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB0F3891CE9AE240081D932 /* Main.storyboard */; };
-		BBB0F3901CE9B61D0081D932 /* ChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0F38F1CE9B61D0081D932 /* ChatDataModel.swift */; };
-		BBB0F3921CE9B7D20081D932 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0F3911CE9B7D20081D932 /* ChatBubble.swift */; };
 		BBB0F3961CE9C6650081D932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBB0F3951CE9C6650081D932 /* Assets.xcassets */; };
-		BBD2C07A1CE9814B00CD246C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD2C0791CE9814B00CD246C /* AppDelegate.swift */; };
-		BBD2C07C1CE9814B00CD246C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD2C07B1CE9814B00CD246C /* ViewController.swift */; };
 		BBD2C0841CE9814B00CD246C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD2C0821CE9814B00CD246C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB4C9B761CFC04EB0047D28E /* ChatDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatDataModel.swift; path = Model/Messaging/ChatDataModel.swift; sourceTree = "<group>"; };
+		BB4C9B781CFC05100047D28E /* ChatBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatBubbleView.swift; path = View/Messaging/ChatBubbleView.swift; sourceTree = "<group>"; };
+		BB4C9B7A1CFC051A0047D28E /* UILabelCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelCustomization.swift; path = View/Messaging/UILabelCustomization.swift; sourceTree = "<group>"; };
+		BB4C9B7C1CFC05320047D28E /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioPlayerViewController.swift; path = Controller/Messaging/AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		BB4C9B7D1CFC05320047D28E /* MediaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MediaController.swift; path = Controller/Messaging/MediaController.swift; sourceTree = "<group>"; };
+		BB4C9B7E1CFC05320047D28E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controller/Messaging/ViewController.swift; sourceTree = "<group>"; };
+		BB4C9B821CFC05450047D28E /* PassCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassCodeVC.swift; path = Controller/PassCode/PassCodeVC.swift; sourceTree = "<group>"; };
+		BB4C9B841CFC05590047D28E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SupportingFiles/AppDelegate.swift; sourceTree = "<group>"; };
+		BB4C9B851CFC05590047D28E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
 		BBB0F38A1CE9AE240081D932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BBB0F38F1CE9B61D0081D932 /* ChatDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDataModel.swift; sourceTree = "<group>"; };
-		BBB0F3911CE9B7D20081D932 /* ChatBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		BBB0F3951CE9C6650081D932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBD2C0761CE9814B00CD246C /* CopSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBD2C0791CE9814B00CD246C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBD2C07B1CE9814B00CD246C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBD2C0831CE9814B00CD246C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BBD2C0851CE9814B00CD246C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +55,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB4C9B6E1CFC01A40047D28E /* PassCode */ = {
+			isa = PBXGroup;
+			children = (
+				BB4C9B821CFC05450047D28E /* PassCodeVC.swift */,
+			);
+			name = PassCode;
+			sourceTree = "<group>";
+		};
+		BB4C9B6F1CFC01B30047D28E /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				BB4C9B7C1CFC05320047D28E /* AudioPlayerViewController.swift */,
+				BB4C9B7D1CFC05320047D28E /* MediaController.swift */,
+				BB4C9B7E1CFC05320047D28E /* ViewController.swift */,
+			);
+			name = Messaging;
+			sourceTree = "<group>";
+		};
+		BB4C9B701CFC01DA0047D28E /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				BB4C9B761CFC04EB0047D28E /* ChatDataModel.swift */,
+			);
+			name = Messaging;
+			sourceTree = "<group>";
+		};
+		BB4C9B711CFC01E50047D28E /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				BB4C9B7A1CFC051A0047D28E /* UILabelCustomization.swift */,
+				BB4C9B781CFC05100047D28E /* ChatBubbleView.swift */,
+			);
+			name = Messaging;
+			sourceTree = "<group>";
+		};
+		BB4C9B721CFC01ED0047D28E /* PassCode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PassCode;
+			sourceTree = "<group>";
+		};
+		BB4C9B731CFC02090047D28E /* PassCode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PassCode;
+			sourceTree = "<group>";
+		};
 		BB77A8961CEC2CA100CBFF5A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,7 +114,8 @@
 		BBB0F38C1CE9B4C10081D932 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BBB0F38F1CE9B61D0081D932 /* ChatDataModel.swift */,
+				BB4C9B731CFC02090047D28E /* PassCode */,
+				BB4C9B701CFC01DA0047D28E /* Messaging */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -94,7 +153,8 @@
 		BBD2C08B1CE9815F00CD246C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BBB0F3911CE9B7D20081D932 /* ChatBubble.swift */,
+				BB4C9B721CFC01ED0047D28E /* PassCode */,
+				BB4C9B711CFC01E50047D28E /* Messaging */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -102,7 +162,8 @@
 		BBD2C08C1CE9816B00CD246C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BBD2C07B1CE9814B00CD246C /* ViewController.swift */,
+				BB4C9B6F1CFC01B30047D28E /* Messaging */,
+				BB4C9B6E1CFC01A40047D28E /* PassCode */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -110,10 +171,10 @@
 		BBD2C08D1CE9817400CD246C /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				BB4C9B841CFC05590047D28E /* AppDelegate.swift */,
+				BB4C9B851CFC05590047D28E /* Info.plist */,
 				BBB0F3891CE9AE240081D932 /* Main.storyboard */,
 				BBD2C0821CE9814B00CD246C /* LaunchScreen.storyboard */,
-				BBD2C0851CE9814B00CD246C /* Info.plist */,
-				BBD2C0791CE9814B00CD246C /* AppDelegate.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -185,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB4C9B871CFC05590047D28E /* Info.plist in Resources */,
 				BBB0F38B1CE9AE240081D932 /* Main.storyboard in Resources */,
 				BBB0F3961CE9C6650081D932 /* Assets.xcassets in Resources */,
 				BBD2C0841CE9814B00CD246C /* LaunchScreen.storyboard in Resources */,
@@ -198,10 +260,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBB0F3901CE9B61D0081D932 /* ChatDataModel.swift in Sources */,
-				BBD2C07C1CE9814B00CD246C /* ViewController.swift in Sources */,
-				BBD2C07A1CE9814B00CD246C /* AppDelegate.swift in Sources */,
-				BBB0F3921CE9B7D20081D932 /* ChatBubble.swift in Sources */,
+				BB4C9B861CFC05590047D28E /* AppDelegate.swift in Sources */,
+				BB4C9B791CFC05100047D28E /* ChatBubbleView.swift in Sources */,
+				BB4C9B7B1CFC051A0047D28E /* UILabelCustomization.swift in Sources */,
+				BB4C9B7F1CFC05320047D28E /* AudioPlayerViewController.swift in Sources */,
+				BB4C9B801CFC05320047D28E /* MediaController.swift in Sources */,
+				BB4C9B811CFC05320047D28E /* ViewController.swift in Sources */,
+				BB4C9B831CFC05450047D28E /* PassCodeVC.swift in Sources */,
+				BB4C9B771CFC04EB0047D28E /* ChatDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +386,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				INFOPLIST_FILE = CopSync/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CopSync/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leapfrog.CopSync;
@@ -337,7 +403,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				INFOPLIST_FILE = CopSync/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CopSync/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leapfrog.CopSync;
