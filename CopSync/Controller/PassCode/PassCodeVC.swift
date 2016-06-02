@@ -29,11 +29,13 @@ class PassCodeVC: UIViewController {
     var keyboardHeight: CGFloat = 0
     var createPassword = false //used to determine if the input shall be used to create password
     var passCode: String = "" //String used for verification of passcode at first launch
+    var authentication = Authentication()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         victimData =  VictimData(name: victimName)
+        
         showKeyBoard()
         
         self.dummyTextField?.delegate = self
@@ -52,10 +54,9 @@ class PassCodeVC: UIViewController {
     func resizeDigitLabel(passCodeDigitLabel: UILabel) {
         if isDeleteKeyPressed {
             self.isDeleteKeyPressed = false
-            passCodeDigitLabel.removeCircularView()
+            passCodeDigitLabel.removeCircularView(3)
         } else {
-            passCodeDigitLabel.frame.size.height = 24
-            passCodeDigitLabel.createCircularView()
+            passCodeDigitLabel.createCircularView(24)
         }
         passCodeDigitLabel.center.y = (passCodeDigitLabel.superview?.frame.height)! / 2
     }
@@ -74,10 +75,10 @@ class PassCodeVC: UIViewController {
     }
 
     func resetAllLabelFrames() {
-        self.passFirstDigitLabel.removeCircularView()
-        self.passSecondDigitLabel.removeCircularView()
-        self.passThirdDigitLabel.removeCircularView()
-        self.passFourthDigitLabel.removeCircularView()
+        self.passFirstDigitLabel.removeCircularView(3)
+        self.passSecondDigitLabel.removeCircularView(3)
+        self.passThirdDigitLabel.removeCircularView(3)
+        self.passFourthDigitLabel.removeCircularView(3)
     }
     
     func textEditingChanged() {
@@ -103,9 +104,7 @@ class PassCodeVC: UIViewController {
             } else {
                 if self.passCode == self.dummyTextField?.text {
                     self.createPassword  = false
-                    
-                    NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isFirstLogin")
-                    NSUserDefaults.standardUserDefaults().synchronize()
+                    self.authentication.saveToKeyChain(self.passCode)
                     self.passCodeOptionButton.hidden = true
                     print("first time login sucessfully")
                 } else {
@@ -120,7 +119,7 @@ class PassCodeVC: UIViewController {
             }
 
         } else {
-            if Authentication.validatePassCode(self.inputPassCode!) {
+            if authentication.validatePassCode(self.inputPassCode!) {
                 print("login sucessful")
             } else {
                 let systemSoundID: SystemSoundID = 1016

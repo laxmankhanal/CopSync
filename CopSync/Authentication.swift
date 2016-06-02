@@ -9,6 +9,8 @@ class Authentication {
     func saveToKeyChain(inputCode: String) {
         self.myKeychainWrapper.mySetObject(inputCode, forKey: kSecValueData)
         self.myKeychainWrapper.writeToKeychain()
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isFirstLogin")
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     func validatePassCode(inputCode: String) -> Bool {

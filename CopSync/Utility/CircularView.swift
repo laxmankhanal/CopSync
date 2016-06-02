@@ -18,13 +18,14 @@ import UIKit
 //}
 
 extension UIView {
-    func createCircularView()  {
+    func createCircularView(height: CGFloat)  {
+        self.frame.size.height = height
         self.layer.cornerRadius = self.frame.width / 2
         self.clipsToBounds = true
     }
     
-    func removeCircularView() {
-        self.frame.size.height = 3
+    func removeCircularView(height: CGFloat) {
+        self.frame.size.height = height
         self.center.y = self.superview!.frame.height / 2
         self.clipsToBounds = false
     }
