@@ -16,6 +16,10 @@
 		BB4C9B831CFC05450047D28E /* PassCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B821CFC05450047D28E /* PassCodeVC.swift */; };
 		BB4C9B861CFC05590047D28E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B841CFC05590047D28E /* AppDelegate.swift */; };
 		BB4C9B871CFC05590047D28E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB4C9B851CFC05590047D28E /* Info.plist */; };
+		BB4C9B8A1CFC06780047D28E /* PassCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4C9B881CFC06780047D28E /* PassCode.storyboard */; };
+		BB4C9B8C1CFC0A6D0047D28E /* VictimDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B8B1CFC0A6D0047D28E /* VictimDataModel.swift */; };
+		BB4C9B921CFD4C540047D28E /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B911CFD4C540047D28E /* CircularView.swift */; };
+		BB4C9B981CFD8B840047D28E /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B971CFD8B840047D28E /* KeychainWrapper.m */; };
 		BBB0F38B1CE9AE240081D932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBB0F3891CE9AE240081D932 /* Main.storyboard */; };
 		BBB0F3961CE9C6650081D932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBB0F3951CE9C6650081D932 /* Assets.xcassets */; };
 		BBD2C0841CE9814B00CD246C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD2C0821CE9814B00CD246C /* LaunchScreen.storyboard */; };
@@ -31,6 +35,12 @@
 		BB4C9B821CFC05450047D28E /* PassCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PassCodeVC.swift; path = Controller/PassCode/PassCodeVC.swift; sourceTree = "<group>"; };
 		BB4C9B841CFC05590047D28E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SupportingFiles/AppDelegate.swift; sourceTree = "<group>"; };
 		BB4C9B851CFC05590047D28E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
+		BB4C9B891CFC06780047D28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PassCode.storyboard; sourceTree = "<group>"; };
+		BB4C9B8B1CFC0A6D0047D28E /* VictimDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictimDataModel.swift; sourceTree = "<group>"; };
+		BB4C9B911CFD4C540047D28E /* CircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularView.swift; path = Utility/CircularView.swift; sourceTree = "<group>"; };
+		BB4C9B951CFD8B830047D28E /* CopSync-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CopSync-Bridging-Header.h"; sourceTree = "<group>"; };
+		BB4C9B961CFD8B840047D28E /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		BB4C9B971CFD8B840047D28E /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		BBB0F38A1CE9AE240081D932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBB0F3951CE9C6650081D932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBD2C0761CE9814B00CD246C /* CopSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +103,7 @@
 		BB4C9B721CFC01ED0047D28E /* PassCode */ = {
 			isa = PBXGroup;
 			children = (
+				BB4C9B911CFD4C540047D28E /* CircularView.swift */,
 			);
 			name = PassCode;
 			sourceTree = "<group>";
@@ -100,6 +111,7 @@
 		BB4C9B731CFC02090047D28E /* PassCode */ = {
 			isa = PBXGroup;
 			children = (
+				BB4C9B8B1CFC0A6D0047D28E /* VictimDataModel.swift */,
 			);
 			name = PassCode;
 			sourceTree = "<group>";
@@ -171,10 +183,14 @@
 		BBD2C08D1CE9817400CD246C /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				BB4C9B881CFC06780047D28E /* PassCode.storyboard */,
+				BB4C9B961CFD8B840047D28E /* KeychainWrapper.h */,
+				BB4C9B971CFD8B840047D28E /* KeychainWrapper.m */,
 				BB4C9B841CFC05590047D28E /* AppDelegate.swift */,
 				BB4C9B851CFC05590047D28E /* Info.plist */,
 				BBB0F3891CE9AE240081D932 /* Main.storyboard */,
 				BBD2C0821CE9814B00CD246C /* LaunchScreen.storyboard */,
+				BB4C9B951CFD8B830047D28E /* CopSync-Bridging-Header.h */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -248,6 +264,7 @@
 			files = (
 				BB4C9B871CFC05590047D28E /* Info.plist in Resources */,
 				BBB0F38B1CE9AE240081D932 /* Main.storyboard in Resources */,
+				BB4C9B8A1CFC06780047D28E /* PassCode.storyboard in Resources */,
 				BBB0F3961CE9C6650081D932 /* Assets.xcassets in Resources */,
 				BBD2C0841CE9814B00CD246C /* LaunchScreen.storyboard in Resources */,
 			);
@@ -263,9 +280,12 @@
 				BB4C9B861CFC05590047D28E /* AppDelegate.swift in Sources */,
 				BB4C9B791CFC05100047D28E /* ChatBubbleView.swift in Sources */,
 				BB4C9B7B1CFC051A0047D28E /* UILabelCustomization.swift in Sources */,
+				BB4C9B921CFD4C540047D28E /* CircularView.swift in Sources */,
 				BB4C9B7F1CFC05320047D28E /* AudioPlayerViewController.swift in Sources */,
+				BB4C9B8C1CFC0A6D0047D28E /* VictimDataModel.swift in Sources */,
 				BB4C9B801CFC05320047D28E /* MediaController.swift in Sources */,
 				BB4C9B811CFC05320047D28E /* ViewController.swift in Sources */,
+				BB4C9B981CFD8B840047D28E /* KeychainWrapper.m in Sources */,
 				BB4C9B831CFC05450047D28E /* PassCodeVC.swift in Sources */,
 				BB4C9B771CFC04EB0047D28E /* ChatDataModel.swift in Sources */,
 			);
@@ -274,6 +294,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BB4C9B881CFC06780047D28E /* PassCode.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB4C9B891CFC06780047D28E /* Base */,
+			);
+			name = PassCode.storyboard;
+			sourceTree = "<group>";
+		};
 		BBB0F3891CE9AE240081D932 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -381,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -391,6 +420,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leapfrog.CopSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CopSync/CopSync-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -398,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -408,6 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leapfrog.CopSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CopSync/CopSync-Bridging-Header.h";
 			};
 			name = Release;
 		};
