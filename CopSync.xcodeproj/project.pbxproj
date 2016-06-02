@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB42BBB71D0029BB0006364F /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB42BBB61D0029BB0006364F /* Authentication.swift */; };
 		BB4C9B771CFC04EB0047D28E /* ChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B761CFC04EB0047D28E /* ChatDataModel.swift */; };
 		BB4C9B791CFC05100047D28E /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B781CFC05100047D28E /* ChatBubbleView.swift */; };
 		BB4C9B7B1CFC051A0047D28E /* UILabelCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C9B7A1CFC051A0047D28E /* UILabelCustomization.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB42BBB61D0029BB0006364F /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		BB4C9B761CFC04EB0047D28E /* ChatDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatDataModel.swift; path = Model/Messaging/ChatDataModel.swift; sourceTree = "<group>"; };
 		BB4C9B781CFC05100047D28E /* ChatBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatBubbleView.swift; path = View/Messaging/ChatBubbleView.swift; sourceTree = "<group>"; };
 		BB4C9B7A1CFC051A0047D28E /* UILabelCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelCustomization.swift; path = View/Messaging/UILabelCustomization.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		BB77A8961CEC2CA100CBFF5A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				BB42BBB61D0029BB0006364F /* Authentication.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				BB4C9B981CFD8B840047D28E /* KeychainWrapper.m in Sources */,
 				BB4C9B831CFC05450047D28E /* PassCodeVC.swift in Sources */,
 				BB4C9B771CFC04EB0047D28E /* ChatDataModel.swift in Sources */,
+				BB42BBB71D0029BB0006364F /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

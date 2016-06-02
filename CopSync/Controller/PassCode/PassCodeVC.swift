@@ -1,5 +1,4 @@
 import UIKit
-import LocalAuthentication
 import AudioToolbox
 
 enum PassCodeDigitPos: Int {
@@ -17,55 +16,36 @@ class PassCodeVC: UIViewController {
     @IBOutlet var passThirdDigitLabel: UILabel!
     @IBOutlet var passSecondDigitLabel: UILabel!
     @IBOutlet var passCodeContainerView: UIView!
+    @IBOutlet var dummyTextField: UITextField!
+    @IBOutlet var passCodeMsgLabel: UILabel!
+    @IBOutlet var passCodeOptionButton: UIButton!
     
     var victimName = "Sarah"
     var victimData: VictimData?
-    var dummyTextField: UITextField?
-    var passCodeDigitPos: Int = 0
+    var passCodeDigitPos: Int = 0 //specifies the current passcode digit count
     var isDeleteKeyPressed = false
-    var inputPassCode: String?
-    let myKeychainWrapper = KeychainWrapper()
-    var context = LAContext()
-    var isFirstLogin = true
+    var inputPassCode: String? //passcode entered for verification
+    var isFirstLogin = true //specifies if it is first login of user or not
     var keyboardHeight: CGFloat = 0
-    var createPassword = false
-    var passCode: String = ""
-    var narrationeText: String?
+    var createPassword = false //used to determine if the input shall be used to create password
+    var passCode: String = "" //String used for verification of passcode at first launch
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         victimData =  VictimData(name: victimName)
-        createDummyTextField()
         showKeyBoard()
-        self.narrationLabel.text = self.narrationeText
-
+        
         self.dummyTextField?.delegate = self
         self.dummyTextField?.addTarget(self, action: #selector(textEditingChanged), forControlEvents: .EditingChanged)
         
-        // Add comments
+        // identifies if user have logged in for first time
         self.isFirstLogin = NSUserDefaults.standardUserDefaults().boolForKey("isFirstLogin")
-        
-        //---
-        //used for touch id verification
-//        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error:nil) {
-//            loginUsingTouchID()
-//        }
-        if isFirstLogin {
-            self.narrationeText = "Dear \((victimData?.victimName)!), Please enter your passcode to continue."
-        } else {
-             self.narrationeText = "Dear \((victimData?.victimName)!), Please verify your passcode."
-        }
-    }
-    
-    func createDummyTextField() {
-        self.dummyTextField = UITextField(frame:CGRectMake(10,10,10,10))
-        self.view.addSubview(dummyTextField!)
-        self.dummyTextField!.keyboardType = .NumberPad
-        self.dummyTextField!.hidden = true
+        self.narrationLabel.text = "Dear \((victimData?.victimName)!), Please enter your passcode to continue."
     }
     
     private func showKeyBoard() {
+        self.dummyTextField!.keyboardType = .NumberPad
         self.dummyTextField!.becomeFirstResponder()
     }
     
@@ -80,7 +60,7 @@ class PassCodeVC: UIViewController {
         passCodeDigitLabel.center.y = (passCodeDigitLabel.superview?.frame.height)! / 2
     }
     
-    func goToPreviousDigit() {
+    func changeDigitPosition() {
         switch PassCodeDigitPos(rawValue: self.passCodeDigitPos)! {
         case .First:
             resizeDigitLabel(self.passFirstDigitLabel)
@@ -92,7 +72,7 @@ class PassCodeVC: UIViewController {
             resizeDigitLabel(self.passFourthDigitLabel)
         }
     }
-    
+
     func resetAllLabelFrames() {
         self.passFirstDigitLabel.removeCircularView()
         self.passSecondDigitLabel.removeCircularView()
@@ -100,7 +80,6 @@ class PassCodeVC: UIViewController {
         self.passFourthDigitLabel.removeCircularView()
     }
     
-    // transfer this to uitextfield delegate
     func textEditingChanged() {
         if self.passCodeDigitPos == 0 {
             self.dummyTextField?.text = ""
@@ -112,7 +91,6 @@ class PassCodeVC: UIViewController {
         }
     }
     
-//    / make a separate class for authenticataion
     func loginAction() {
         if self.isFirstLogin {
             if !self.createPassword {
@@ -121,21 +99,28 @@ class PassCodeVC: UIViewController {
                 resetAllLabelFrames()
                 self.passCode = (self.dummyTextField?.text)!
                 self.dummyTextField?.text = ""
-                self.narrationLabel.text = self.narrationeText
+                self.narrationLabel.text = "Dear \((victimData?.victimName)!), Please verify your passcode."
             } else {
-                self.createPassword  = false
                 if self.passCode == self.dummyTextField?.text {
-                    myKeychainWrapper.mySetObject(self.inputPassCode, forKey: kSecValueData)
-                    myKeychainWrapper.writeToKeychain()
+                    self.createPassword  = false
+                    
                     NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isFirstLogin")
                     NSUserDefaults.standardUserDefaults().synchronize()
-                    print("first time login sucessful")
+                    self.passCodeOptionButton.hidden = true
+                    print("first time login sucessfully")
+                } else {
+                    self.createPassword  = true
+                    self.passCodeMsgLabel.hidden = false
+                    self.passCodeMsgLabel.text = "Passcode donot match. Try again"
+                    self.passCodeOptionButton.hidden = true
+                    self.passCodeDigitPos = 0
+                    self.dummyTextField?.text = ""
+                    resetAllLabelFrames()
                 }
             }
 
         } else {
-            print(inputPassCode)
-            if inputPassCode == myKeychainWrapper.myObjectForKey(kSecValueData) as? String {
+            if Authentication.validatePassCode(self.inputPassCode!) {
                 print("login sucessful")
             } else {
                 let systemSoundID: SystemSoundID = 1016
@@ -173,27 +158,19 @@ extension PassCodeVC: UITextFieldDelegate {
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if (string == "") {
             self.isDeleteKeyPressed = true
-            goToPreviousDigit()
+            changeDigitPosition()
             self.passCodeDigitPos -= 1
         } else {
             if self.passCodeDigitPos < 4 {
                 self.passCodeDigitPos += 1
-                
-                switch PassCodeDigitPos(rawValue: self.passCodeDigitPos)! as PassCodeDigitPos {
-                case .First:
-                    resizeDigitLabel(self.passFirstDigitLabel)
-                case .Second:
-                    resizeDigitLabel(self.passSecondDigitLabel)
-                case .Third:
-                    resizeDigitLabel(self.passThirdDigitLabel)
-                case .Fourth:
-                    resizeDigitLabel(self.passFourthDigitLabel)
-                }
+                changeDigitPosition()
             } else {
                 return false
             }
         }
         return true
     }
+    
+    
     
 }

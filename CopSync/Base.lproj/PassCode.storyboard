@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Narration Text&gt;" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uQ-v6-Lkw">
-                                <rect key="frame" x="245" y="117" width="109.5" height="17"/>
+                                <rect key="frame" x="50" y="117" width="500" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,9 +130,20 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6U7-AO-Adc">
-                                <rect key="frame" x="238" y="305" width="124" height="30"/>
+                                <rect key="frame" x="238" y="319" width="124" height="30"/>
                                 <state key="normal" title="Passcode Options"/>
                             </button>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vd3-7g-Z4R">
+                                <rect key="frame" x="39" y="64" width="25" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Wrong Passcode&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8M-dj-OQy">
+                                <rect key="frame" x="224.5" y="268" width="151" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85098039219999999" green="0.84705882349999995" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -141,18 +152,29 @@
                             <constraint firstItem="T3F-dn-bH6" firstAttribute="centerX" secondItem="noD-rh-ho3" secondAttribute="centerX" id="CvG-QH-ajn"/>
                             <constraint firstItem="6U7-AO-Adc" firstAttribute="centerX" secondItem="noD-rh-ho3" secondAttribute="centerX" id="DWV-wl-5Bc"/>
                             <constraint firstItem="3uQ-v6-Lkw" firstAttribute="top" secondItem="TU8-bQ-48E" secondAttribute="bottom" constant="97" id="KEM-4u-sa3"/>
+                            <constraint firstItem="3uQ-v6-Lkw" firstAttribute="leading" secondItem="noD-rh-ho3" secondAttribute="leadingMargin" constant="30" id="RCt-2I-Eqq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Blq-0Q-Qdd" secondAttribute="trailing" constant="361" id="VYh-73-W0p"/>
                             <constraint firstItem="3uQ-v6-Lkw" firstAttribute="centerX" secondItem="noD-rh-ho3" secondAttribute="centerX" id="iJ0-6n-qkM"/>
+                            <constraint firstItem="Vd3-7g-Z4R" firstAttribute="leading" secondItem="noD-rh-ho3" secondAttribute="leadingMargin" constant="19" id="lOe-zW-Dgh"/>
+                            <constraint firstItem="E8M-dj-OQy" firstAttribute="centerX" secondItem="noD-rh-ho3" secondAttribute="centerX" id="oBY-wq-yDu"/>
+                            <constraint firstItem="E8M-dj-OQy" firstAttribute="top" secondItem="T3F-dn-bH6" secondAttribute="bottom" constant="30" id="qOE-7I-fDf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3uQ-v6-Lkw" secondAttribute="trailing" constant="30" id="uLC-Jw-uO2"/>
+                            <constraint firstItem="Vd3-7g-Z4R" firstAttribute="top" secondItem="TU8-bQ-48E" secondAttribute="bottom" constant="44" id="yH0-om-bNb"/>
+                            <constraint firstItem="6U7-AO-Adc" firstAttribute="top" secondItem="E8M-dj-OQy" secondAttribute="bottom" constant="30" id="yMg-Oo-Elb"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="VYh-73-W0p"/>
+                                <exclude reference="At8-Ym-trr"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="dummyTextField" destination="Vd3-7g-Z4R" id="9gc-3e-QAE"/>
                         <outlet property="narrationLabel" destination="3uQ-v6-Lkw" id="n3x-ML-RQU"/>
                         <outlet property="passCodeContainerView" destination="T3F-dn-bH6" id="14c-4q-cpe"/>
+                        <outlet property="passCodeMsgLabel" destination="E8M-dj-OQy" id="dEp-IS-GP5"/>
+                        <outlet property="passCodeOptionButton" destination="6U7-AO-Adc" id="5iq-Dk-fvG"/>
                         <outlet property="passFirstDigitLabel" destination="Blq-0Q-Qdd" id="GRT-p5-Ty7"/>
                         <outlet property="passFourthDigitLabel" destination="DJc-P8-5zn" id="CMY-3Y-Bs1"/>
                         <outlet property="passSecondDigitLabel" destination="HTb-dz-Os9" id="R5m-Fg-S5y"/>
