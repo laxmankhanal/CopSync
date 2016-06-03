@@ -122,6 +122,7 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="9l2-sq-Kdv"/>
                                         <exclude reference="Xv4-Xe-uSa"/>
                                         <exclude reference="G8O-mY-31b"/>
                                         <exclude reference="Hcs-ry-qKU"/>
@@ -147,6 +148,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.85098039219999999" green="0.84705882349999995" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="T3F-dn-bH6" firstAttribute="leading" secondItem="noD-rh-ho3" secondAttribute="leadingMargin" constant="172" id="7XD-Uh-UfY"/>
                             <constraint firstItem="6U7-AO-Adc" firstAttribute="top" secondItem="T3F-dn-bH6" secondAttribute="bottom" constant="67" id="At8-Ym-trr"/>
                             <constraint firstItem="T3F-dn-bH6" firstAttribute="top" secondItem="3uQ-v6-Lkw" secondAttribute="bottom" constant="54" id="Ckv-1h-ptn"/>
                             <constraint firstItem="T3F-dn-bH6" firstAttribute="centerX" secondItem="noD-rh-ho3" secondAttribute="centerX" id="CvG-QH-ajn"/>
@@ -154,6 +156,7 @@
                             <constraint firstItem="3uQ-v6-Lkw" firstAttribute="top" secondItem="TU8-bQ-48E" secondAttribute="bottom" constant="97" id="KEM-4u-sa3"/>
                             <constraint firstItem="3uQ-v6-Lkw" firstAttribute="leading" secondItem="noD-rh-ho3" secondAttribute="leadingMargin" constant="30" id="RCt-2I-Eqq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Blq-0Q-Qdd" secondAttribute="trailing" constant="361" id="VYh-73-W0p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T3F-dn-bH6" secondAttribute="trailing" constant="172" id="bfx-dv-vPd"/>
                             <constraint firstItem="3uQ-v6-Lkw" firstAttribute="centerX" secondItem="noD-rh-ho3" secondAttribute="centerX" id="iJ0-6n-qkM"/>
                             <constraint firstItem="Vd3-7g-Z4R" firstAttribute="leading" secondItem="noD-rh-ho3" secondAttribute="leadingMargin" constant="19" id="lOe-zW-Dgh"/>
                             <constraint firstItem="E8M-dj-OQy" firstAttribute="centerX" secondItem="noD-rh-ho3" secondAttribute="centerX" id="oBY-wq-yDu"/>

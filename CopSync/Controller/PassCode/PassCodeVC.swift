@@ -93,7 +93,7 @@ class PassCodeVC: UIViewController {
     }
     
     func loginAction() {
-        if self.isFirstLogin {
+        if !self.isFirstLogin {
             if !self.createPassword {
                 self.createPassword  = true
                 self.passCodeDigitPos = 0
@@ -169,7 +169,5 @@ extension PassCodeVC: UITextFieldDelegate {
         }
         return true
     }
-    
-    
     
 }
